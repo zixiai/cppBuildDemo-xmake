@@ -1,8 +1,15 @@
 add_rules("mode.debug", "mode.release")
 
+add_requires("boost 1.86.0")
+add_requires("opencv 4.10.0")
+add_requireconfs("opencv.ffmepg", {version = "7.0", override = true})
+add_requires("ffmpeg 7.0")
+
+
 target("cppBuildDemo-xmake")
     set_kind("binary")
     add_files("src/*.cpp")
+    add_packages("boost", "opencv", "ffmpeg")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
