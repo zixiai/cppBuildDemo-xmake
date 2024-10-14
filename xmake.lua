@@ -1,17 +1,41 @@
+-- 项目所需 xmake 最小版本
+set_xmakever("2.9.0")
+
+-- 项目设定配置
 add_rules("mode.debug", "mode.release")
 add_rules("plugin.compile_commands.autoupdate", {outputdir = ".vscode"})
+set_policy("package.requires_lock", true)
 
+-- 项目添加依赖
+-- add_requires("xxx", {configs = {shared = true}}) -- shared demo
 add_requires("boost 1.86.0", {configs = {headers = true}})
-add_requires("libhv 1.3.2")
+add_requires("ffmpeg 7.0")
+add_requires("glog 0.7.1")
+add_requires("gtest 1.15.2")
+add_requires("libhv 1.3.2", {configs = {openssl = true}})
 add_requires("opencv 4.10.0")
 add_requireconfs("opencv.ffmepg", {version = "7.0", override = true})
-add_requires("ffmpeg 7.0")
-add_requires("gtest 1.15.2")
+add_requires("protobuf-cpp 3.19.4") 
+add_requires("simpleini 4.22") 
 
+
+-- 目标 cppBuildDemo-xmake
 target("cppBuildDemo-xmake")
+    -- 目标编译对象
     set_kind("binary")
     add_files("src/*.cpp")
-    add_packages("boost", "libhv", "opencv", "ffmpeg", "gtest")
+
+    -- 目标模板配置文件
+    add_configfiles("src/config.h.in")
+    set_configdir("$(buildir)/config")
+
+    -- 目标链接依赖库
+    add_packages("boost", "ffmpeg", "glog", "gtest", "libhv", "opencv", "protobuf-cpp", "simpleini")
+
+
+
+
+
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
