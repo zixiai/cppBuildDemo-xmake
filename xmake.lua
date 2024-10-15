@@ -1,10 +1,10 @@
--- 项目所需 xmake 最小版本
+-- 项目配置
 set_xmakever("2.9.0")
+set_policy("package.requires_lock", true)
 
 -- 项目设定配置
 add_rules("mode.debug", "mode.release")
 add_rules("plugin.compile_commands.autoupdate", {outputdir = ".vscode"})
-set_policy("package.requires_lock", true)
 
 -- 项目添加依赖
 -- add_requires("xxx", {configs = {shared = true}}) -- shared demo
@@ -15,8 +15,8 @@ add_requires("gtest 1.15.2")
 add_requires("libhv 1.3.2", {configs = {openssl = true}})
 add_requires("opencv 4.10.0")
 add_requireconfs("opencv.ffmepg", {version = "7.0", override = true})
-add_requires("protobuf-cpp 3.19.4") 
-add_requires("simpleini 4.22") 
+add_requires("protobuf-cpp 3.19.4")
+add_requires("simpleini 4.22")
 
 
 -- 目标 cppBuildDemo-xmake
