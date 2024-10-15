@@ -163,14 +163,6 @@
             },
             version = "3.7.3"
         },
-        ["python#31fecfc4"] = {
-            repo = {
-                branch = "master",
-                commit = "97793f8db43e8176760e40295f7886352bf436ae",
-                url = "https://gitee.com/tboox/xmake-repo.git"
-            },
-            version = "3.7.3"
-        },
         ["simpleini 4.22#31fecfc4"] = {
             repo = {
                 branch = "master",
@@ -178,6 +170,22 @@
                 url = "https://gitee.com/tboox/xmake-repo.git"
             },
             version = "v4.22"
+        },
+        ["sqlite3#31fecfc4"] = {
+            repo = {
+                branch = "master",
+                commit = "97793f8db43e8176760e40295f7886352bf436ae",
+                url = "https://gitee.com/tboox/xmake-repo.git"
+            },
+            version = "3.46.0+100"
+        },
+        ["sqlitecpp 3.3.2#31fecfc4"] = {
+            repo = {
+                branch = "master",
+                commit = "97793f8db43e8176760e40295f7886352bf436ae",
+                url = "https://gitee.com/tboox/xmake-repo.git"
+            },
+            version = "3.3.2"
         },
         ["zlib#31fecfc4"] = {
             repo = {

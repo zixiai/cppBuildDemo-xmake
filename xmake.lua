@@ -17,6 +17,7 @@ add_requires("opencv 4.10.0")
 add_requireconfs("opencv.ffmepg", {version = "7.0", override = true})
 add_requires("protobuf-cpp 3.19.4")
 add_requires("simpleini 4.22")
+add_requires("sqlitecpp 3.3.2")
 
 
 -- 目标 cppBuildDemo-xmake
@@ -30,7 +31,7 @@ target("cppBuildDemo-xmake")
     set_configdir("$(buildir)/config")
 
     -- 目标链接依赖库
-    add_packages("boost", "ffmpeg", "glog", "gtest", "libhv", "opencv", "protobuf-cpp", "simpleini")
+    add_packages("boost", "ffmpeg", "glog", "gtest", "libhv", "opencv", "protobuf-cpp", "simpleini", "sqlitecpp")
 
 
 
